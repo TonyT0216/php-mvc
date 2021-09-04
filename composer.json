@@ -6,5 +6,13 @@
             "email": "tonymichael16@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Mvc\\Library\\": "lib"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "psr/log": "^3.0"
+    }
 }
