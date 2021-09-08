@@ -8,11 +8,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "Mvc\\Library\\": "lib"
+            "App\\": "app",
+            "Core\\": "lib/"
         }
     },
     "require": {},
     "require-dev": {
-        "psr/log": "^3.0"
+        "psr/log": "^3.0",
+        "spatie/ray": "^1.30"
     }
 }

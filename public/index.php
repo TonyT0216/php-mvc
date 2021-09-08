@@ -1,13 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 
 /**
- * Front Controller PHP8.0
+ * Front Controller PHP 8.0 version
  */
+require dirname(__DIR__) . '/vendor/autoload.php';
 
-require '../vendor/autoload.php';
+$router = new Core\Router\Router();
+// Add the routes
+$router->add('', ['controller' => 'Home', 'action' => 'index']);
+$router->add('{controller}/{action}');
+$router->add('{controller}/{id:\d+}/{action}');
 
-$router = new Mvc\Library\Router\Router();
-
-echo get_class($router);
-
-//echo 'Requested URL = "' . $_SERVER['QUERY_STRING'] . '"';
+$router->dispatch($_SERVER['QUERY_STRING']);
